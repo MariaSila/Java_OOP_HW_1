@@ -2,11 +2,11 @@ package Seminar.Sem_01;
 
 import java.time.LocalDate;
 
-public class Duck extends Animal{
+public class Bat extends Animal{
     private int wingQuantity;
 
-    public Duck(String name, LocalDate birthDate, Illness illness, int wingQuantity) {
-        super(name, birthDate, illness);
+    public Bat(String name, LocalDate birthDay, Illness illness, int wingQuantity) {
+        super(name, birthDay, illness);
         this.wingQuantity = wingQuantity;
     }
 
@@ -17,8 +17,7 @@ public class Duck extends Animal{
     @Override
     public void canDo() {
         super.canDo();
-        toGo();
         fly();
-        swim();
+        toGo();
     }
 }

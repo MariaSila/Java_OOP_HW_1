@@ -32,12 +32,29 @@ public class Animal {
         System.out.println(getAnimalType() + " спит");
     }
 
+    protected void toGo() {
+        System.out.println(" бегать");
+    }
+
+    protected void fly() {
+        System.out.println(" летать");
+    }
+
+    protected void swim() {
+        System.out.println(" плавать");
+    }
+
+    public void canDo() {
+        System.out.println(getAnimalType() + " умеет: ");
+    }
+
     public void lifeCycle() {
         wakeUp();
         hunt();
         eat();
         sleep();
     }
+
 
     public void setIllness(Illness illness) {
         this.illness = illness;
@@ -61,7 +78,7 @@ public class Animal {
 
     @Override
     public String toString() {
-        return String.format("name = %s, birthDay = %s, illness = %s", name, birthDay, illness);
+        return String.format("animal = %s, name = %s, birthDay = %s, illness = %s", getAnimalType(), name, birthDay, illness);
     }
 
 
