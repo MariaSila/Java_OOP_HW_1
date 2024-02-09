@@ -1,4 +1,4 @@
-package Seminar.Sem_01;
+package Seminar.Sem_1_and_2.vetclinic.classes;
 
 public class Illness {
     String name;

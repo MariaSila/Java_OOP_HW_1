@@ -1,4 +1,4 @@
-package Seminar.Sem_01;
+package Seminar.Sem_1_and_2.vetclinic.classes;
 
 import java.time.LocalDate;
 
@@ -15,9 +15,7 @@ public class Bat extends Animal{
     }
 
     @Override
-    public void canDo() {
-        super.canDo();
-        fly();
-        toGo();
+    public void eat() {
+
     }
 }

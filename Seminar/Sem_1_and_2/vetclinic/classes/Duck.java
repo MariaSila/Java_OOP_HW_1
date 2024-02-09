@@ -1,4 +1,4 @@
-package Seminar.Sem_01;
+package Seminar.Sem_1_and_2.vetclinic.classes;
 
 import java.time.LocalDate;
 
@@ -15,10 +15,7 @@ public class Duck extends Animal{
     }
 
     @Override
-    public void canDo() {
-        super.canDo();
-        toGo();
-        fly();
-        swim();
+    public void eat() {
+
     }
 }
