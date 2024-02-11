@@ -17,8 +17,6 @@ public abstract class Animal {
         this("Имя", LocalDate.now(), new Illness("Болезень"));
     }
 
-    public abstract void eat();
-
     public void setIllness(Illness illness) {
         this.illness = illness;
     }

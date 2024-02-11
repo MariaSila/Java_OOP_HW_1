@@ -1,26 +1,28 @@
 package Seminar.Sem_1_and_2.vetclinic.classes;
 
 import Seminar.Sem_1_and_2.vetclinic.Interface.Goable;
+import Seminar.Sem_1_and_2.vetclinic.Interface.Swimable;
 
 import java.time.LocalDate;
 
-public class Dog extends Animal implements Goable {
+public class Dog extends Animal implements Goable, Swimable {
 
     public Dog(String name, LocalDate birthDate, Illness illness) {
 
         super(name, birthDate, illness);
     }
 
-    public Dog() {
+    @Override
+    public double run() {
+        double speed = 22;
+        System.out.printf("%s %s бежит со скоростью ", getAnimalType(), this.name);
+        return speed;
     }
 
     @Override
-    public void eat() {
-
-    }
-
-    @Override
-    public double go() {
-        return 7;
+    public double swim() {
+        double speed = 3;
+        System.out.printf("%s %s плавает со скоростью ", getAnimalType(), this.name);
+        return speed;
     }
 }
