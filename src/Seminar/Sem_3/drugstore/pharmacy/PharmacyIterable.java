@@ -31,6 +31,10 @@ public class PharmacyIterable implements Iterable<Component>, Comparable<Pharmac
         return size;
     }
 
+    public int getIdx() {
+        return idx;
+    }
+
     public List<Component> getComponents() {
         return components;
     }
@@ -38,6 +42,28 @@ public class PharmacyIterable implements Iterable<Component>, Comparable<Pharmac
     public Component getComponent(int idx) {
         return components.get(idx);
     }
+
+    public double getTotalWeight(){
+        double result = 0;
+        for (Component c : components) {
+            result += c.getWeight();
+        }
+        return result;
+    }
+
+    public int getTotalPower() {
+        int result = 0;
+        for (Component c : components) {
+            result += c.getPower();
+        }
+        return result;
+    }
+
+    @Override
+    public int compareTo(PharmacyIterable o) {
+        return Integer.compare(this.getTotalPower(), o.getTotalPower());
+    }
+
     @Override
     public Iterator<Component> iterator() {
         //1 способ реализации через анонимный класс
@@ -52,18 +78,12 @@ public class PharmacyIterable implements Iterable<Component>, Comparable<Pharmac
                 return components.get(idx++);
             }
         };*/
-
         // 2 способ через MyIterator
         return new MyIterator(this);
     }
 
-   public int getIdx() {
-        return idx;
-    }
-
     @Override
-    public int compareTo(PharmacyIterable o) {
-        return 0;
+    public String toString() {
+        return String.format("\ntotal weight: %s total power: %s", this.getTotalWeight(), this.getTotalPower());
     }
-
 }

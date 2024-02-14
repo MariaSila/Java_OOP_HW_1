@@ -8,7 +8,6 @@ import java.util.Iterator;
 import java.util.List;
 
 public class Pharmacy implements Iterator<Component> {
-
     private List<Component> components;
     private int idx;
 
