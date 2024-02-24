@@ -13,4 +13,5 @@
     * методы из Operation перенесены в GBRepository 
     * в UserRepository удалено поле FileOperation и все ссылки на него, а также исправлен конструктор
     * в Main удалена строка new FileOperation(DB_PATH)
+    * удален пакет dao
 5. Метод createUser хотела перенести в User, но Scanner меня остановил. Затрудняюсь в решении, поэтому оставила где был
