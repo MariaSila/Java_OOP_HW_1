@@ -1,6 +1,5 @@
 package src.Seminar.homework_5.notebook.util.mapper.impl;
 
-
 import src.Seminar.homework_5.notebook.model.User;
 import src.Seminar.homework_5.notebook.util.mapper.Mapper;
 

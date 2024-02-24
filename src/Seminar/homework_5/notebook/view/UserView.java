@@ -21,6 +21,15 @@ public class UserView {
             com = Commands.valueOf(command);
             if (com == Commands.EXIT) return;
             switch (com) {
+                case DELETE:
+                    String deleteId = prompt("Enter user id: ");
+                    if (userController.deleteUser(deleteId)){
+                        System.out.println("Контакт успешно удален");
+                    }
+                    break;
+                case LIST:
+                    System.out.println(userController.readAll());
+                    break;
                 case CREATE:
                     User u = createUser();
                     userController.saveUser(u);

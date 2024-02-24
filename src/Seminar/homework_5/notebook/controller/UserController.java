@@ -1,13 +1,11 @@
 package src.Seminar.homework_5.notebook.controller;
 
-
 import src.Seminar.homework_5.notebook.model.User;
 import src.Seminar.homework_5.notebook.model.repository.GBRepository;
 
 import java.util.List;
-import java.util.Objects;
 
-public class UserController {
+public class UserController implements Controller {
     private final GBRepository repository;
 
     public UserController(GBRepository repository) {
@@ -18,16 +16,6 @@ public class UserController {
         repository.create(user);
     }
 
-    public User readUser(Long userId) throws Exception {
-        List<User> users = repository.findAll();
-        for (User user : users) {
-            if (Objects.equals(user.getId(), userId)) {
-                return user;
-            }
-        }
-
-        throw new RuntimeException("User not found");
-    }
 
     public void updateUser(String userId, User update) {
         update.setId(Long.parseLong(userId));
@@ -35,6 +23,15 @@ public class UserController {
     }
 
     public List<User> readAll() {
-        return  repository.findAll();
+        return repository.findAll();
+    }
+
+
+    public boolean deleteUser(String id) {
+        return repository.delete(Long.parseLong(id));
+    }
+
+    public User readUser(long l) {
+        return repository.readUser(l);
     }
 }
